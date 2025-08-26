@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>Joint Angle Estimation</h1>
+        <ul>
+            <li><a href="{{ url_for('instructions') }}" class="active">Instructions</a></li>
+            <li><a href="{{ url_for('menu') }}">Body Part</a></li>
+            <li><a href="{{ url_for('activities') }}">Activities Record</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Instructions</h2>
+        <p>Follow the on-screen instructions to perform the movement. Ensure your camera is properly positioned.</p>
+        <!-- 7 Subheadings -->
+        <h2 style="font-size: 18px; color: black;">Step 1: Choose body part</h2>
+        <p style="color: blue;">- Depends on what body part you want to do exercise.</p>
+        <img src="static/images/main menu.png" alt="Description of image" width="300">
+
+        <h2 style="font-size: 18px; color: black;">Step 2: Select types of body movements.</h2>
+        <p style="color: blue;">- Refer to nurse.</p>
+        <p style="color: green;">For elbow:</p>
+        <p style="color: blue;">- Extension.</p>
+        <p style="color: blue;">- Flexion.</p>
+        <p style="color: green;">For shoulder:</p>
+        <p style="color: blue;">- Extension.</p>
+        <p style="color: blue;">- Flexion.</p>
+        <p style="color: blue;">- Adduction.</p>
+        <p style="color: blue;">- Abduction.</p>
+
+        <h2 style="font-size: 18px; color: black;">Step 3: Enter target angle.</h2>
+        <p style="color: blue;">- Put the angle that refer to psychiatrist then submit.</p>
+        <img src="static/images/target angle.png" alt="Description of image" width="300">
+
+        <h2 style="font-size: 18px; color: black;">Step 4: Move the body part.</h2>
+        <p style="color: blue;">1. Camera will open and there will appear 3 green dots with lines.</p>
+        <p style="color: blue;">2. It will show the current angle.</p>
+        <p style="color: blue;">3. Try to move the body part until it reaches the angle.</p>
+        <p style="color: blue;">4. When you are done, whether you have reached your target or not, press the back button on the website.</p>
+        <img src="static/images/backWebsite.png" alt="Description of image" width="300">
+
+
+        <h2 style="font-size: 18px; color: black;">Step 5: Stop camera</h2>
+        <p style="color: blue;">- Press stop camera button.</p>
+        <img src="static/images/stop camera button.png" alt="Description of image" width="300">
+
+        <h2 style="font-size: 18px; color: black;">Step 6: View activities.</h2>
+        <p style="color: blue;">- You will see the activities you have done.</p>
+        <img src="static/images/wiew activities.png" alt="Description of image" width="300">
+
+
+        <h2 style="font-size: 18px; color: black;">Step 7: Consult with doctor</h2>
+        <p style="color: blue;">- Get advice from a psychiatrist.</p>
+
+
+
+        <a href="/" class="back-btn">Main Menu</a>
+    </div>
+</body>
+</html>

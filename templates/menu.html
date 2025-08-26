@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pose Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>Joint Angle Estimation</h1>
+        <ul>
+            <li><a href="{{ url_for('instructions') }}" class="active">Instructions</a></li>
+            <li><a href="{{ url_for('menu') }}">Body Part</a></li>
+            <li><a href="{{ url_for('activities') }}">Activities Record</a></li>
+        </ul>
+    </div>
+
+<h2 style="font-size: 30px; color: #ff6f61; text-align: center">
+    KEEP UP THE SPIRIT! YOU CAN DO IT!
+</h2>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2 id="body-part">Select a Body Part</h2>
+                <div class="menu-image">
+                    <img src="static/images/mainBackground.jpeg" alt="Description of image" width="300">
+                </div>
+
+                <div class="menu">
+                <ul>
+                    <li><a href="{{ url_for('submenu', part_name='Right_Elbow') }}">Right Elbow</a></li>
+                    <li><a href="{{ url_for('submenu', part_name='Left_Elbow') }}">Left Elbow</a></li>
+                    <li><a href="{{ url_for('submenu', part_name='Right_Shoulder') }}">Right Shoulder</a></li>
+                    <li><a href="{{ url_for('submenu', part_name='Left_Shoulder') }}">Left Shoulder</a></li>
+                </ul>
+            </div>
+        <form action="{{ url_for('activities') }}" method="get">
+            <button type="submit">View Activities</button>
+        </form>
+    </div>
+</body>
+</html>

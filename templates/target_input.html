@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Angle Input</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function showPopup(message) {
+            alert(message);
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>Joint Angle Estimation</h1>
+        <ul>
+            <li><a href="{{ url_for('instructions') }}" class="active">Instructions</a></li>
+            <li><a href="{{ url_for('menu') }}">Body Part</a></li>
+            <li><a href="{{ url_for('activities') }}">Activities Record</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Target Angle</h1>
+        <p><strong>Selected Body Part:</strong> {{ part_name.replace("_", " ") }}</p>
+        <p><strong>Mode:</strong> {{ mode }}</p>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST" class="form-container">
+            <label for="target_angle">Enter Target Angle (0-360°):</label>
+            <input type="number" id="target_angle" name="target_angle" min="0" max="360" required>
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+
+        {% if target_angle is not none %}
+        <br>
+        <form action="{{ url_for('stop_camera') }}" method="get">
+            <button type="submit" class="btn-stop" style="background-color: red; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                Stop Camera
+            </button>
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>

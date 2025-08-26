@@ -1,0 +1,200 @@
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #d0a9f5, #add8e6, #ffffff, #fefbd8);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+/* Smooth Gradient Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 80%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* Main Content Styling */
+.content {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Menu and Link Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    padding: 8px;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* Button Styling */
+button{
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.back-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: block;
+    width: 6em;     /* Width set to 4 units of whatever the base unit is */
+    height: 1em;    /* Height set to 2 units of whatever the base unit is */
+    text-align: center;     /* Center text inside the button */
+    line-height: 1em;      /* Ensures text is vertically centered */
+    text-decoration: none;
+}
+
+button:hover, .back-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table td {
+    background-color: #fff;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Camera Feed Section
+.camera-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Adds space between video and button */
+}
+
+/*#camera-stream {
+    width: 70%; /* Adjust width as needed *
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}*/
+
+#stop-camera {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#stop-camera:hover {
+    background-color: #d32f2f;
+}
+
+.img-spacing {
+    margin-bottom: 20px; /* Adds space below the image */
+}
+
+.btn-spacing {
+    margin-top: 20px; /* Adds space above the button */
+}
+

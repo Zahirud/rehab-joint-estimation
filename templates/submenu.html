@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submenu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>Joint Angle Estimation</h1>
+        <ul>
+            <li><a href="{{ url_for('instructions') }}" class="active">Instructions</a></li>
+            <li><a href="{{ url_for('menu') }}">Body Part</a></li>
+            <li><a href="{{ url_for('activities') }}">Activities Record</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Submenu: {{ part_name.replace('_', ' ').title() }}</h1>
+        <ul class="submenu">
+            <li><a href="/target_input/{{ part_name }}/extension">Extension</a></li>
+            <li><a href="/target_input/{{ part_name }}/flexion">Flexion</a></li>
+            {% if part_name in ['Right_Shoulder', 'Left_Shoulder'] %}
+                <li><a href="/target_input/{{ part_name }}/adduction">Adduction</a></li>
+                <li><a href="/target_input/{{ part_name }}/abduction">Abduction</a></li>
+            {% endif %}
+        </ul>
+        <a href="{{ url_for('menu') }}" class="back-btn">Back</a>
+    </div>
+</body>
+</html>

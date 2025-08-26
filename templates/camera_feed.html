@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Feed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>Joint Angle Estimation</h1>
+        <ul>
+            <li><a href="{{ url_for('menu') }}">Body Part</a></li>
+            <li><a href="{{ url_for('activities') }}">Activities Record</a></li>
+            <li><a href="{{ url_for('instructions') }}">Instructions</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Camera Feed</h2>
+        <p>Selected Body Part: {{ part_name }}</p>
+        <p>Mode: {{ mode }}</p>
+        <p>Camera is running...</p>
+
+        <!-- Camera Feed -->
+        <div class="camera-container" style="display: flex; align-items: center;">
+            <img src="{{ url_for('video_feed', selected_part=part_name, target_angle=mode) }}" alt="Live Camera Feed" style="margin-right: 20px;">
+            <form action="{{ url_for('stop_camera') }}" method="get">
+                <button type="submit" class="stop-btn" style="background-color: red; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                    Stop Camera
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

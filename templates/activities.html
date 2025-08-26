@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Activities</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>Joint Angle Estimation</h1>
+        <ul>
+            <li><a href="{{ url_for('instructions') }}" class="active">Instructions</a></li>
+            <li><a href="{{ url_for('menu') }}">Body Part</a></li>
+            <li><a href="{{ url_for('activities') }}">Activities Record</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>User Activities</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Body Part</th>
+                    <th>Mode</th>
+                    <th>Target Angle</th>
+                    <th>Reached</th>
+                    <th>Submitted At</th>
+                    <th>Reached At</th>
+                    <th>Duration (Seconds)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for activity in activities %}
+                <tr>
+                    <td>{{ activity.part_name.replace('_', ' ') }}</td>
+                    <td>{{ activity.mode }}</td>
+                    <td>{{ activity.target_angle }}</td>
+                    <td>{{ 'Yes' if activity.reached else 'No' }}</td>
+                    <td>{{ activity.submitted_at.strftime('%Y-%m-%d %H:%M:%S') if activity.submitted_at else 'N/A' }}</td>
+                    <td>{{ activity.reached_at.strftime('%Y-%m-%d %H:%M:%S') if activity.reached_at else 'N/A' }}</td>
+                    <td>{{ activity.duration if activity.duration else 'N/A' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/" class="back-btn">Main Menu</a>
+    </div>
+</body>
+</html>
