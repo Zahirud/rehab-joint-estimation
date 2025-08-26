@@ -12,7 +12,7 @@ This web application is designed to assist rehabilitation centers in monitoring 
   - Left arm: landmarks 11, 13, 15 (angle at 13)
   - Right shoulder: landmarks 11, 12, 14 (angle at 12)
   - Left shoulder: landmarks 12, 11, 13 (angle at 11)
-- Tracks performance and time taken to reach target angles
+- Tracks time taken to reach target angles
 - Simple, user-friendly interface for easy operation in rehabilitation sessions
 
 ## Tech Stack
